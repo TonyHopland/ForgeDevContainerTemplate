@@ -1,0 +1,24 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "lmstudio": {
+      "name": "LM Studio",
+      "api": "openai",
+      "options": {
+        "baseURL": "http://YOUR_IP_ADDRESS:1234/v1"
+      },
+      "models": {
+        "default_model": {
+          "name": "LmStudio"
+        }
+      }
+    }
+  },
+  "model": "default_model",
+  "mcp": {
+    "chrome-devtools": {
+      "type": "local",
+      "command": ["npx", "-y", "chrome-devtools-mcp@latest", "--headless", "--chromeArg", "--no-sandbox"]
+    }
+  }
+}

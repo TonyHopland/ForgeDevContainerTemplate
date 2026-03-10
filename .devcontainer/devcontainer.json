@@ -1,0 +1,28 @@
+{
+  "name": "AI Dev - Node & TypeScript",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "..",
+  },
+  "containerEnv": {
+    "ANTHROPIC_BASE_URL": "http://YOUR_IP_ADDRESS:1234",
+    "ANTHROPIC_AUTH_TOKEN": "lmstudio",
+    "ANTHROPIC_MODEL": "default_model"
+  },
+
+  // Share the host network so the container can reach LM Studio on localhost
+  "runArgs": ["--network=host"],
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-typescript-next"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}
