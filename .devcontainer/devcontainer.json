@@ -2,7 +2,7 @@
   "name": "AI Dev - Node & TypeScript",
   "build": {
     "dockerfile": "Dockerfile",
-    "context": "..",
+    "context": ".."
   },
   "containerEnv": {
     "ANTHROPIC_BASE_URL": "http://YOUR_IP_ADDRESS:1234",

@@ -47,8 +47,9 @@ RUN npm install -g @anthropic-ai/claude-code
 # Install Forge — download the latest release from GitHub
 # https://github.com/Robin831/Forge
 # -------------------------------------------------------------------
-COPY .devcontainer/forgeinstall.sh /tmp/forgeinstall.sh
-RUN chmod +x /tmp/forgeinstall.sh && INSTALL_DIR=/usr/local/bin bash /tmp/forgeinstall.sh
+RUN curl -fsSL https://raw.githubusercontent.com/Robin831/Forge/main/install.sh | bash && \
+    cp /root/bin/forge /usr/local/bin/forge && \
+    chmod 755 /usr/local/bin/forge
 
 # Configure GOPATH and add it to PATH
 ENV GOPATH=/home/node/go

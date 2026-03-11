@@ -1,0 +1,43 @@
+anvils:
+  forgeTemplate:
+    path: /workspaces/ForgeDevContainerTemplate/
+    max_smiths: 2
+    auto_dispatch: all  # all | tagged | priority | off
+
+settings:
+  poll_interval: 5m
+  smith_timeout: 30m
+  max_total_smiths: 3
+  max_pipeline_iterations: 5   # Smith-Warden cycles in the pipeline loop (default 5)
+  max_review_attempts: 2
+  max_ci_fix_attempts: 5       # CI fix cycles per PR (default 5)
+  max_review_fix_attempts: 5   # Review fix cycles per PR (default 5)
+  max_rebase_attempts: 3       # Conflict rebase attempts per PR (default 3)
+  daily_cost_limit: 50.00      # USD per day; 0 = no limit
+  copilot_daily_request_limit: 300  # 300 for Pro, 1500 for Pro+; 0 = no limit
+  bellows_interval: 2m         # PR monitor poll interval
+  merge_strategy: squash       # squash | merge | rebase
+  providers:
+    - claude
+  smith_providers:             # Optional: separate chain for Smith/Warden
+    - claude
+  schematic_enabled: false     # Pre-analysis for complex beads
+  schematic_word_threshold: 100
+  crucible_enabled: false      # Epic orchestration for parent-child beads
+  depcheck_interval: 168h      # Dependency scan interval (0 to disable)
+  vulncheck_enabled: true      # Vulnerability scanning with govulncheck
+  vulncheck_interval: 24h     # Vuln scan interval (0 to disable)
+  auto_learn_rules: false      # Learn Warden rules from Copilot review comments
+  stale_interval: 5m           # Stale worker detection (0 to disable)
+  claude_flags:
+    - --dangerously-skip-permissions
+    - --max-turns
+    - "50"
+
+notifications:
+  enabled: false
+  teams_webhook_url: https://outlook.webhook.office.com/webhookb2/...
+  events:                      # Empty = all events
+    - pr_created
+    - bead_failed
+    - daily_cost
