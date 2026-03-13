@@ -135,6 +135,24 @@ Open Code supports Model Context Protocol (MCP) servers for extended functionali
 - Try reloading the model in LM Studio
 - Check the LM Studio server logs for errors
 
+## Setup Instructions
+
+To use this template in your own project:
+
+1. **Copy the following files/folders** to your project root:
+   - `.devcontainer/` folder
+   - `.mcp.json`
+   - `opencode.json`
+   - `forge.yaml`
+
+2. **Choose a devContainer base image** from the official [devcontainers/images repository](https://github.com/devcontainers/images/tree/main/src) that fits your project needs.
+
+3. **Add devcontainer features** as needed from the [devcontainers/features repository](https://github.com/devcontainers/features/tree/main/src).
+
+4. **Update the IP address** in `.devcontainer/devcontainer.json` and `opencode.json` to match your machine's IP address (replace `YOUR_IP_ADDRESS` with your actual IP).
+
+5. **Start the dev container** - you're ready to go!
+
 ## Extensions
 
 The dev container includes these VS Code extensions:
