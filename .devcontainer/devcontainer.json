@@ -9,19 +9,15 @@
 
   // Share the host network so the container can reach LM Studio on localhost
   "runArgs": ["--network=host"],
-  //Fix for Go tools installed in the container 
-  "remoteEnv": {
-        "GOPATH": "/home/node/go", // Research if we can do somehting like: ${localEnv:REMOTEUSER}
-        "PATH": "/home/node/go/bin:/go/bin:/usr/local/go/bin:${localEnv:PATH}"
-    },
   "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {},
-    // "ghcr.io/devcontainers/features/go:1": {},
-    // "./features/chrome": {},
-    // "./features/dolt": {},
-    // "./features/beads": {},
-    // "./features/opencode": {},
-    // "./features/claude-code": {},
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/go:1": {},
+    "ghcr.io/devcontainers/features/node:1": {},
+    "./features/chrome": {},
+    "./features/dolt": {},
+    "./features/beads": {},
+    "./features/opencode": {},
+    "./features/claude-code": {},
     // "./features/forge-install": {}
   },
   "customizations": {

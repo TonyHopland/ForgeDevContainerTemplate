@@ -1,6 +1,6 @@
 # AI Dev Container Template
 
-This development container is configured to work with local LLMs (Large Language Models) via LM Studio, supporting both **Claude Code** and **Open Code** AI assistants.
+This development container is configured to work with local LLMs (Large Language Models) via LM Studio, supporting both **Claude Code** and **Open Code** AI assistants
 
 ## Overview
 
@@ -11,7 +11,7 @@ This template provides two ways to interact with your local LLM:
 
 ## Prerequisites
 
-- Docker Desktop with Dev Containers support
+- **Docker Desktop** with Dev Containers support (Note: This template does not currently work with Podman due to a devcontainers images issue - see [devcontainers/images#1556](https://github.com/devcontainers/images/issues/1556))
 - LM Studio installed on your host machine
 
 ## Getting Started with LM Studio
