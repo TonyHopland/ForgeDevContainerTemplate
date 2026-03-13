@@ -1,6 +1,6 @@
 {
   "name": "AI Dev - Node & TypeScript",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:latest",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:latest",
   "containerEnv": {
     "ANTHROPIC_BASE_URL": "http://192.168.1.5:1234",
     "ANTHROPIC_AUTH_TOKEN": "lmstudio",
@@ -9,15 +9,19 @@
 
   // Share the host network so the container can reach LM Studio on localhost
   "runArgs": ["--network=host"],
-
+  //Fix for Go tools installed in the container 
+  "remoteEnv": {
+        "GOPATH": "/home/node/go", // Research if we can do somehting like: ${localEnv:REMOTEUSER}
+        "PATH": "/home/node/go/bin:/go/bin:/usr/local/go/bin:${localEnv:PATH}"
+    },
   "features": {
-    // "./features/base-utils": {},
+    "ghcr.io/devcontainers/features/common-utils:2": {},
     // "ghcr.io/devcontainers/features/go:1": {},
     // "./features/chrome": {},
     // "./features/dolt": {},
     // "./features/beads": {},
     // "./features/opencode": {},
-    "./features/claude-code": {},
+    // "./features/claude-code": {},
     // "./features/forge-install": {}
   },
   "customizations": {
@@ -31,5 +35,6 @@
         "terminal.integrated.defaultProfile.linux": "bash"
       }
     }
-  }
+  },
+  // "remoteUser": "root"
 }
